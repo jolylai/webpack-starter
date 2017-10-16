@@ -1,0 +1,9 @@
+body {
+    background: skyblue;
+}
+
+#tupian {
+    width: 120px;
+    height: 120px;
+    background: url('../images/farm.png') no-repeat;
+}
