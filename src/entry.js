@@ -1,5 +1,8 @@
 import css from './css/index.css'
 import styles from './css/black.less'
+// import $ from 'jquery'
+
+$('#app').html('hello jquery')
 
 const body = document.body
 

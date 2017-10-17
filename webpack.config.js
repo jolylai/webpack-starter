@@ -3,8 +3,12 @@ const ClenaWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const uglify = require('uglifyjs-webpack-plugin')
 const extractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+
+console.log('type', encodeURIComponent(process.env.type));
 
 module.exports = {
+  devtool: 'evel-source-map',
   entry: './src/entry.js',
   output: {
     // 获取项目绝对路径
@@ -52,7 +56,10 @@ module.exports = {
       template: './src/index.html'
     }),
     // new uglify(),
-    new extractTextPlugin("/css/index.css")
+    new extractTextPlugin("/css/index.css"),
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    })
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
