@@ -1,31 +1,18 @@
 {
-  "name": "webpack-jspagn",
+  "name": "webpack-starter",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "repository": "git@github.com:jolylai/webpack-starter.git",
+  "author": "jolylai <jolylai163@163.com>",
+  "license": "MIT",
   "scripts": {
-    "build": "set type=prod&webpack",
-    "dev": "webpack-dev-server"
+    "start": "webpack server",
+    "build": "webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.17",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.1",
-    "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.30.1",
-    "html-withimg-loader": "^0.1.16",
-    "less": "^3.0.0-alpha.3",
-    "less-loader": "^4.0.5",
-    "style-loader": "^0.19.0",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.2"
-  },
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "react": "^16.0.0"
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.1"
   }
 }
