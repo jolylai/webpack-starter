@@ -16,7 +16,38 @@ module.exports = {
         test: /.vue$/,
         use: ["vue-loader"],
       },
+      // {
+      //   test: /\.m?js$/,
+      //   exclude: /node-modules/,
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: ["@babel/preset-env"],
+      //     },
+      //   },
+      // },
     ],
+  },
+  optimization: {
+    realContentHash: false,
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          name: "chunk-vendors",
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          chunks: "initial",
+        },
+        common: {
+          name: "chunk-common",
+          minChunks: 2,
+          priority: -20,
+          chunks: "initial",
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

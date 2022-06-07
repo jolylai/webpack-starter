@@ -1,14 +1,20 @@
 <template>
-  <div class="example">{{ msg }}</div>
+  <button @click="main">request</button>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      msg: "Hello world!",
-    };
-  },
+<script setup>
+const request = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello webpack");
+    }, 1000);
+  });
+};
+
+const main = async () => {
+  const response = await request();
+
+  console.log(response);
 };
 </script>
 
