@@ -1,5 +1,7 @@
 <template>
   <button @click="main">request</button>
+  <a @click="onClick('/home')">home</a>
+  <a @click="onClick('/about')">about</a>
 </template>
 
 <script setup>
@@ -15,6 +17,11 @@ const main = async () => {
   const response = await request();
 
   console.log(response);
+};
+
+const onClick = () => {
+  history.pushState(null, null, "/home");
+  history.pushState(null, null, "/about");
 };
 </script>
 
